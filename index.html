@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AcademiaFlow — Organização de Atividades e Lembretes</title>
+    <link rel="stylesheet" href="/src/view/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-content">
+        <div>
+          <h1>AcademiaFlow</h1>
+          <p class="subtitle">Sistema de Organização de Atividades e Lembretes Acadêmicos (ADS)</p>
+        </div>
+        <span class="badge-arquitetura">POO • Camada de Visão × Camada de Domínio</span>
+      </div>
+    </header>
+
+    <main class="container main-grid">
+      <aside class="sidebar">
+        <h2>Workspaces (Disciplinas)</h2>
+        <ul id="lista-workspaces" class="workspace-list">
+          <!-- Renderizado via TypeScript (src/view/app.ts) -->
+        </ul>
+      </aside>
+
+      <section class="content-area">
+        <div id="painel-resumo" class="card">
+          <h2>Painel Geral do Estudante</h2>
+          <p>Ambiente inicial configurado. Os colaboradores já podem evoluir os métodos do Domínio e a interface da Visão.</p>
+          <div id="itens-container" class="items-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/view/app.ts"></script>
+  </body>
+</html>
