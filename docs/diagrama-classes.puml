@@ -1,0 +1,149 @@
+@startuml AcademiaFlow_Dominio
+skinparam classAttributeIconSize 0
+skinparam monochrome false
+skinparam packageStyle rectangle
+
+title Diagrama de Classes de Domínio — AcademiaFlow (POO com TypeScript)
+
+package "Camada de Domínio (src/domain)" {
+
+  enum OrigemAtividade {
+    PROFESSOR
+    AUTOESTUDO
+  }
+
+  interface ItemChecklist {
+    + descricao: string
+    + feita: boolean
+  }
+
+  interface EtapaTrabalho {
+    + titulo: string
+    + responsavel: string
+    + entregue: boolean
+  }
+
+  abstract class ItemAcademico {
+    # id: string
+    # titulo: string
+    # descricao: string
+    # dataCriacao: Date
+    # workspaceId: string
+    --
+    + constructor(id: string, titulo: string, descricao: string, workspaceId: string, dataCriacao?: Date)
+    # validarTextoObrigatorio(valor: string, nomeCampo: string): void
+    + getId(): string
+    + getTitulo(): string
+    + getDescricao(): string
+    + getDataCriacao(): Date
+    + getWorkspaceId(): string
+    + obterResumoBasico(): string
+    + {abstract} obterCategoria(): string
+    + {abstract} estaPendente(): boolean
+    + {abstract} obterExibicaoFormatada(): string
+  }
+
+  class AtividadePratica extends ItemAcademico {
+    # dataLimite: Date
+    # concluida: boolean
+    # dataConclusao?: Date
+    - origem: OrigemAtividade
+    - checklist: ItemChecklist[]
+    - linkEntrega?: string
+    --
+    + constructor(...)
+    + obterCategoria(): string
+    + estaPendente(): boolean
+    + obterExibicaoFormatada(): string
+    + marcarComoConcluida(): void
+    + verificarSeAtrasada(): boolean
+    + calcularDiasRestantes(): number
+    + adicionarItemChecklist(descricao: string): void
+    + alternarItemChecklist(indice: number): void
+    + getDataLimite(): Date
+    + isConcluida(): boolean
+    + getDataConclusao(): Date | undefined
+    + getOrigem(): OrigemAtividade
+    + getChecklist(): ReadonlyArray<ItemChecklist>
+    + getLinkEntrega(): string | undefined
+  }
+
+  class TrabalhoEmGrupo extends AtividadePratica {
+    - colegasDeEquipe: string[]
+    - papelDoAluno: string
+    - etapas: EtapaTrabalho[]
+    --
+    + constructor(...)
+    + obterCategoria(): string
+    + estaPendente(): boolean
+    + obterExibicaoFormatada(): string
+    + adicionarEtapa(titulo: string, responsavel: string): void
+    + marcarEtapaComoEntregue(indice: number): void
+    + calcularProgressoPercentual(): number
+    + getColegasDeEquipe(): ReadonlyArray<string>
+    + getPapelDoAluno(): string
+    + getEtapas(): ReadonlyArray<EtapaTrabalho>
+  }
+
+  class Lembrete extends ItemAcademico {
+    - dataAviso?: Date
+    - fixado: boolean
+    - etiqueta: string
+    - arquivado: boolean
+    --
+    + constructor(...)
+    + obterCategoria(): string
+    + estaPendente(): boolean
+    + obterExibicaoFormatada(): string
+    + alternarFixacao(): void
+    + arquivar(): void
+    + isFixado(): boolean
+    + getEtiqueta(): string
+    + getDataAviso(): Date | undefined
+  }
+
+  class Workspace {
+    - codigo: string
+    - nome: string
+    - professor: string
+    - salaOuLink?: string
+    - horario?: string
+    - itens: ItemAcademico[]
+    --
+    + constructor(codigo: string, nome: string, professor: string, salaOuLink?: string, horario?: string)
+    + adicionarItem(item: ItemAcademico): void
+    + buscarItemPorId(id: string): ItemAcademico | undefined
+    + removerItem(id: string): boolean
+    + listarItens(): ReadonlyArray<ItemAcademico>
+    + listarItensPendentes(): ItemAcademico[]
+    + listarItensConcluidos(): ItemAcademico[]
+    + listarItensEmAtraso(): AtividadePratica[]
+    + listarLembretesFixados(): Lembrete[]
+    + buscarPorTexto(termo: string): ItemAcademico[]
+    + ordenarAtividadesPorPrazo(): AtividadePratica[]
+    + ordenarPorDataCadastro(): ItemAcademico[]
+    + filtrarAtividadesPorOrigem(origem: OrigemAtividade): AtividadePratica[]
+    + obterTotalAtividades(): number
+    + calcularTaxaConclusao(): number
+  }
+
+  class PainelEstudante {
+    - workspaces: Workspace[]
+    --
+    + adicionarWorkspace(workspace: Workspace): void
+    + buscarWorkspacePorCodigo(codigo: string): Workspace | undefined
+    + listarWorkspaces(): ReadonlyArray<Workspace>
+    + obterProximosPrazosDaSemana(): AtividadePratica[]
+    + obterAtividadesEmAtraso(): AtividadePratica[]
+    + obterMuralLembretesFixados(): Lembrete[]
+    + buscarGlobalPorTexto(termo: string): ItemAcademico[]
+  }
+
+  Workspace "1" *-- "0..*" ItemAcademico : compõe / gerencia >
+  PainelEstudante "1" o-- "0..*" Workspace : gerencia >
+  AtividadePratica ..> OrigemAtividade
+  AtividadePratica *-- ItemChecklist
+  TrabalhoEmGrupo *-- EtapaTrabalho
+}
+
+@enduml
