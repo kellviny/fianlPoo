@@ -1,0 +1,225 @@
+{
+  "workspaces": [
+    {
+      "codigo": "ADS0304",
+      "nome": "Programação Orientada a Objetos",
+      "professor": "Prof. Iallen Gábio",
+      "salaOuLink": "Laboratório 03 - Bloco B",
+      "horario": "Segunda e Quarta, 19:00 - 20:40",
+      "itens": [
+        {
+          "id": "poo-01",
+          "tipo": "TRABALHO_GRUPO",
+          "titulo": "Trabalho Final: Sistema AcademiaFlow",
+          "descricao": "Modelagem e implementação de sistema em camadas (Domínio x Visão) utilizando POO com TypeScript estrito.",
+          "dataCriacao": "2026-10-20T19:00:00.000Z",
+          "workspaceId": "ADS0304",
+          "dataLimite": "2026-11-12T23:59:00.000Z",
+          "concluida": false,
+          "origem": "PROFESSOR",
+          "colegasDeEquipe": ["Kellviny", "Colaborador 2", "Colaborador 3"],
+          "papelDoAluno": "Arquitetura inicial, configuração do repositório e modelagem base",
+          "etapas": [
+            { "titulo": "Configuração do repositório e estrutura base", "responsavel": "Kellviny", "entregue": true },
+            { "titulo": "Implementação das classes de Domínio e invariantes", "responsavel": "Equipe", "entregue": false },
+            { "titulo": "Desenvolvimento da Camada de Visão e LocalStorage", "responsavel": "Equipe", "entregue": false }
+          ],
+          "linkEntrega": "https://github.com/"
+        },
+        {
+          "id": "poo-02",
+          "tipo": "ATIVIDADE_PRATICA",
+          "titulo": "Lista Prática de Herança e Polimorfismo",
+          "descricao": "Resolver os 5 exercícios práticos sobre classes abstratas e sobrescrita de métodos em TypeScript.",
+          "dataCriacao": "2026-10-15T19:00:00.000Z",
+          "workspaceId": "ADS0304",
+          "dataLimite": "2026-10-28T23:59:00.000Z",
+          "concluida": true,
+          "dataConclusao": "2026-10-27T21:15:00.000Z",
+          "origem": "PROFESSOR",
+          "checklist": [
+            { "descricao": "Implementar classe base abstrata", "feita": true },
+            { "descricao": "Testar coleção polimórfica sem instanceof", "feita": true }
+          ]
+        },
+        {
+          "id": "poo-03",
+          "tipo": "ATIVIDADE_PRATICA",
+          "titulo": "Revisão de Encapsulamento e Getters/Setters",
+          "descricao": "Refatorar exemplos de aula para proteger coleções internas com ReadonlyArray.",
+          "dataCriacao": "2026-11-01T14:00:00.000Z",
+          "workspaceId": "ADS0304",
+          "dataLimite": "2026-11-09T23:59:00.000Z",
+          "concluida": false,
+          "origem": "AUTOESTUDO",
+          "checklist": [
+            { "descricao": "Revisar slides de encapsulamento", "feita": true },
+            { "descricao": "Praticar cópia defensiva de arrays e datas", "feita": false }
+          ]
+        },
+        {
+          "id": "poo-04",
+          "tipo": "LEMBRETE",
+          "titulo": "Apresentação Preliminar (Status Report) e Defesa Oral",
+          "descricao": "Todos os integrantes devem saber explicar o código da Camada de Domínio sem depender de IA.",
+          "dataCriacao": "2026-10-21T10:00:00.000Z",
+          "workspaceId": "ADS0304",
+          "dataAviso": "2026-11-11T19:00:00.000Z",
+          "fixado": true,
+          "etiqueta": "Aviso de Aula"
+        }
+      ]
+    },
+    {
+      "codigo": "ADS0302",
+      "nome": "Banco de Dados II",
+      "professor": "Profa. Mariana Costa",
+      "salaOuLink": "Laboratório 01 - Bloco A",
+      "horario": "Terça e Quinta, 19:00 - 20:40",
+      "itens": [
+        {
+          "id": "bd-01",
+          "tipo": "ATIVIDADE_PRATICA",
+          "titulo": "Script de Stored Procedures e Triggers em PostgreSQL",
+          "descricao": "Criar triggers de auditoria para controle de estoque e testar transações concorrentes.",
+          "dataCriacao": "2026-10-20T19:00:00.000Z",
+          "workspaceId": "ADS0302",
+          "dataLimite": "2026-11-02T23:59:00.000Z",
+          "concluida": false,
+          "origem": "PROFESSOR",
+          "checklist": [
+            { "descricao": "Criar tabelas de log", "feita": true },
+            { "descricao": "Implementar função trigger em PL/pgSQL", "feita": false }
+          ]
+        },
+        {
+          "id": "bd-02",
+          "tipo": "TRABALHO_GRUPO",
+          "titulo": "Otimização de Consultas e Índices",
+          "descricao": "Analisar plano de execução (EXPLAIN ANALYZE) em base com 500 mil registros.",
+          "dataCriacao": "2026-10-25T19:00:00.000Z",
+          "workspaceId": "ADS0302",
+          "dataLimite": "2026-11-10T23:59:00.000Z",
+          "concluida": false,
+          "origem": "PROFESSOR",
+          "colegasDeEquipe": ["Kellviny", "Lucas", "Beatriz"],
+          "papelDoAluno": "Criação dos índices compostos e medição de tempo",
+          "etapas": [
+            { "titulo": "Importar dataset de testes", "responsavel": "Lucas", "entregue": true },
+            { "titulo": "Criar índices B-Tree e medir ganho", "responsavel": "Kellviny", "entregue": false }
+          ]
+        },
+        {
+          "id": "bd-03",
+          "tipo": "LEMBRETE",
+          "titulo": "Instalar pgAdmin 4 e Docker antes da aula prática",
+          "descricao": "Levar notebook configurado com container PostgreSQL 16 ativo.",
+          "dataCriacao": "2026-10-18T08:00:00.000Z",
+          "workspaceId": "ADS0302",
+          "fixado": true,
+          "etiqueta": "Material Necessário"
+        }
+      ]
+    },
+    {
+      "codigo": "ADS0305",
+      "nome": "Engenharia de Software",
+      "professor": "Prof. Carlos Eduardo",
+      "salaOuLink": "Sala 12 - Bloco C",
+      "horario": "Terça e Quinta, 20:50 - 22:30",
+      "itens": [
+        {
+          "id": "eng-01",
+          "tipo": "TRABALHO_GRUPO",
+          "titulo": "Especificação de Requisitos e Diagramas de Caso de Uso",
+          "descricao": "Documentar requisitos funcionais, não-funcionais e regras de negócio do projeto integrador.",
+          "dataCriacao": "2026-10-10T20:50:00.000Z",
+          "workspaceId": "ADS0305",
+          "dataLimite": "2026-10-30T23:59:00.000Z",
+          "concluida": true,
+          "dataConclusao": "2026-10-29T18:00:00.000Z",
+          "origem": "PROFESSOR",
+          "colegasDeEquipe": ["Kellviny", "Ana", "Pedro"],
+          "papelDoAluno": "Modelagem UML e revisão das regras de negócio",
+          "etapas": [
+            { "titulo": "Levantamento de requisitos", "responsavel": "Ana", "entregue": true },
+            { "titulo": "Diagramas UML", "responsavel": "Kellviny", "entregue": true }
+          ]
+        },
+        {
+          "id": "eng-02",
+          "tipo": "ATIVIDADE_PRATICA",
+          "titulo": "Estudo de Padrões Arquiteturais (MVC e Camadas)",
+          "descricao": "Resumo comparativo sobre separação entre interface gráfica e regras de negócio.",
+          "dataCriacao": "2026-11-01T15:00:00.000Z",
+          "workspaceId": "ADS0305",
+          "dataLimite": "2026-11-08T23:59:00.000Z",
+          "concluida": false,
+          "origem": "AUTOESTUDO",
+          "checklist": [
+            { "descricao": "Ler artigo sobre Clean Architecture", "feita": false }
+          ]
+        },
+        {
+          "id": "eng-03",
+          "tipo": "LEMBRETE",
+          "titulo": "Segunda Avaliação Escrita na próxima quinta-feira",
+          "descricao": "Conteúdo: Testes de Software, Scrum, Kanban e Estimativa de Esforço.",
+          "dataCriacao": "2026-11-02T19:00:00.000Z",
+          "workspaceId": "ADS0305",
+          "dataAviso": "2026-11-12T20:50:00.000Z",
+          "fixado": true,
+          "etiqueta": "Recado do Professor"
+        }
+      ]
+    },
+    {
+      "codigo": "ADS0306",
+      "nome": "Redes de Computadores",
+      "professor": "Prof. Roberto Mendes",
+      "salaOuLink": "Laboratório de Redes - Bloco B",
+      "horario": "Sexta-feira, 19:00 - 22:30",
+      "itens": [
+        {
+          "id": "red-01",
+          "tipo": "ATIVIDADE_PRATICA",
+          "titulo": "Simulação de Sub-redes IPv4 no Cisco Packet Tracer",
+          "descricao": "Configurar roteamento estático e cálculo de máscara VLSM para 4 departamentos.",
+          "dataCriacao": "2026-10-18T19:00:00.000Z",
+          "workspaceId": "ADS0306",
+          "dataLimite": "2026-11-01T23:59:00.000Z",
+          "concluida": false,
+          "origem": "PROFESSOR",
+          "checklist": [
+            { "descricao": "Calcular tabela de sub-redes", "feita": true },
+            { "descricao": "Testar ping entre roteadores no Packet Tracer", "feita": false }
+          ]
+        },
+        {
+          "id": "red-02",
+          "tipo": "ATIVIDADE_PRATICA",
+          "titulo": "Prática de Captura de Pacotes HTTP/DNS no Wireshark",
+          "descricao": "Capturar handshake TCP de 3 vias e consultas DNS em ambiente controlado.",
+          "dataCriacao": "2026-10-30T19:00:00.000Z",
+          "workspaceId": "ADS0306",
+          "dataLimite": "2026-11-07T23:59:00.000Z",
+          "concluida": false,
+          "origem": "PROFESSOR",
+          "checklist": [
+            { "descricao": "Capturar pacotes SYN, SYN-ACK e ACK", "feita": false }
+          ]
+        },
+        {
+          "id": "red-03",
+          "tipo": "LEMBRETE",
+          "titulo": "Tabela de Portas TCP/UDP mais cobradas em prova",
+          "descricao": "Revisar portas 22 (SSH), 53 (DNS), 80 (HTTP), 443 (HTTPS) e 3306/5432.",
+          "dataCriacao": "2026-10-25T11:00:00.000Z",
+          "workspaceId": "ADS0306",
+          "fixado": false,
+          "etiqueta": "Autoestudo"
+        }
+      ]
+    }
+  ]
+}
