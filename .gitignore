@@ -1,0 +1,16 @@
+# Dependências
+node_modules/
+
+# Build de produção
+dist/
+
+# Arquivos de ambiente e logs
+.env
+*.log
+npm-debug.log*
+
+# Diretórios de editores e SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,23 @@
+{
+  "name": "academia-flow",
+  "version": "1.0.0",
+  "description": "Sistema de Organização de Atividades e Lembretes Acadêmicos (AcademiaFlow) - POO com TypeScript",
+  "type": "module",
+  "scripts": {
+    "start": "vite --open",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "poo",
+    "typescript",
+    "ads",
+    "academiaflow"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10"
+  }
+}
